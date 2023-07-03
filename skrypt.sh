@@ -15,6 +15,12 @@ elif [[ $1 == "--logs" ]]; then
         echo "Nazwa skryptu: skrypt.sh" >> log$i.txt
         echo "Data: $(date "+%Y-%m-%d")" >> log$i.txt
     done
+elif [[ $1 == "--help" ]]; then  
+    echo "HELP"
+    echo "--date - wypisuje date"
+    echo "--logs liczba - tworzy podaną ilość plików z logami"
 else
-    echo "Bledny argument"
+    echo "HELP"
+    echo "--date - wypisuje date"
+    echo "--logs liczba - tworzy podaną ilość plików z logami"
 fi
