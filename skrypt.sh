@@ -41,10 +41,14 @@ elif [[ $1 == "--init" ]]; then
     echo "Inicjalizacja zakończona."
 elif [[ $1 == "--help"  || "$1" == "-h" ]]; then  
     echo "HELP"
-    echo "--date - wypisuje date"
-    echo "--logs liczba - tworzy podaną ilość plików z logami"
+    echo "--date -d - wypisuje date"
+    echo "--logs -d [liczba] - tworzy podaną ilość plików z logami"
+    echo "--error -e [liczba] - tworzy pliki z błędami"
+    echo "--init pobiera repozytorium ze skryptem"
 else
     echo "HELP"
-    echo "--date - wypisuje date"
-    echo "--logs liczba - tworzy podaną ilość plików z logami"
+    echo "--date -d - wypisuje date"
+    echo "--logs -d [liczba] - tworzy podaną ilość plików z logami"
+    echo "--error -e [liczba] - tworzy pliki z błędami"
+    echo "--init pobiera repozytorium ze skryptem"
 fi
