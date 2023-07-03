@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [[ $1 == "--date" ]]; then
+if [[ $1 == "--date"  || "$1" == "-d" ]]; then
     current_date=$(date "+%Y-%m-%d")
     echo "Dzisiejsza data: $current_date"
-elif [[ $1 == "--logs" ]]; then
+elif [[ $1 == "--logs"  || "$1" == "-l" ]]; then
     if [ -n "$2" ]; then
         zmienna=$2
     else
@@ -15,7 +15,7 @@ elif [[ $1 == "--logs" ]]; then
         echo "Nazwa skryptu: skrypt.sh" >> log$i.txt
         echo "Data: $(date "+%Y-%m-%d")" >> log$i.txt
     done
-elif [[ $1 == "--help" ]]; then  
+elif [[ $1 == "--help"  || "$1" == "-h" ]]; then  
     echo "HELP"
     echo "--date - wypisuje date"
     echo "--logs liczba - tworzy podaną ilość plików z logami"
