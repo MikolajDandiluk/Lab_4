@@ -15,6 +15,17 @@ elif [[ $1 == "--logs"  || "$1" == "-l" ]]; then
         echo "Nazwa skryptu: skrypt.sh" >> log$i.txt
         echo "Data: $(date "+%Y-%m-%d")" >> log$i.txt
     done
+elif [[ $1 == "--init" ]]; then
+    # Klonowanie repozytorium
+    git clone git@github.com:MikolajDandiluk/Lab_4.git ./
+
+    # Pobranie bieżącej ścieżki
+    current_path=$(pwd)
+
+    # Dodanie ścieżki do zmiennej środowiskowej PATH
+    echo "export PATH=\$PATH:$current_path" >> ~/.bashrc
+    source ~/.bashrc
+    echo "Inicjalizacja zakończona."
 elif [[ $1 == "--help"  || "$1" == "-h" ]]; then  
     echo "HELP"
     echo "--date - wypisuje date"
