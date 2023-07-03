@@ -9,11 +9,24 @@ elif [[ $1 == "--logs"  || "$1" == "-l" ]]; then
     else
         zmienna=100
     fi
-    for ((i=1; i<=$2; i++)) 
+    for ((i=1; i<=$zmienna; i++)) 
     do
         echo "Nazwa pliku: log$i.txt" > log$i.txt
         echo "Nazwa skryptu: skrypt.sh" >> log$i.txt
         echo "Data: $(date "+%Y-%m-%d")" >> log$i.txt
+    done
+elif [[ $1 == "--error"  || "$1" == "-e" ]]; then
+    if [ -n "$2" ]; then
+        zmienna=$2
+    else
+        zmienna=100
+    fi
+    for ((i=1; i<=$zmienna; i++)) 
+    do
+        mkdir error$i
+        echo "Nazwa pliku: error$i.txt" > error$i/error$i.txt
+        echo "Nazwa skryptu: skrypt.sh" >> error$i/error$i.txt
+        echo "Data: $(date "+%Y-%m-%d")" >> error$i/error$i.txt
     done
 elif [[ $1 == "--init" ]]; then
     # Klonowanie repozytorium
